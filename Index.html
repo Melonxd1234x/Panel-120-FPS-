@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+            margin: 0;
+        }
+        .contador {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contador" id="contador">3</div>
+
+    <script>
+        // Función que maneja la cuenta regresiva
+        let timeRemaining = 3; // 3 segundos
+        const contadorElement = document.getElementById('contador');
+
+        const interval = setInterval(() => {
+            timeRemaining--;
+            contadorElement.textContent = timeRemaining;
+
+            if (timeRemaining <= 0) {
+                clearInterval(interval); // Detener la cuenta regresiva
+                window.location.href = "https://a9fm.github.io/lightshot"; // Redirigir a la URL deseada
+            }
+        }, 1000); // Actualizar cada segundo
+    </script>
+
+</body>
+</html>
